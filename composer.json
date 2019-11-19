@@ -1,0 +1,27 @@
+{
+  "name": "stk2k/collection",
+  "description": "Simple PHP collection class library",
+  "keywords": ["PHP","Collection"],
+  "homepage": "https://github.com/stk2k/collection",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Katsuki Shuto",
+      "email": "stk2k@sazysoft.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.3.0",
+    "php-coveralls/php-coveralls": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Stk2k\\Collection\\": "src/"
+    }
+  }
+}
