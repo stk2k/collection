@@ -290,8 +290,14 @@ class VectorTest extends TestCase
 
         $vec = new Vector([12, 3, -1, 0, 4, 1.2, 'kiwi', 'apple']);
         $ret = $vec->sort();
-        $this->assertSame([-1, 0, 'apple', 'kiwi', 1.2, 3, 4, 12], $vec->toArray());
-        $this->assertSame([-1, 0, 'apple', 'kiwi', 1.2, 3, 4, 12], $ret->toArray());
+        if (version_compare(PHP_VERSION, '8.0.0') >= 0) {
+            $this->assertSame([-1, 0, 1.2, 3, 4, 12, 'apple', 'kiwi'], $vec->toArray());
+            $this->assertSame([-1, 0, 1.2, 3, 4, 12, 'apple', 'kiwi'], $ret->toArray());
+        }
+        else{
+            $this->assertSame([-1, 0, 'apple', 'kiwi', 1.2, 3, 4, 12], $vec->toArray());
+            $this->assertSame([-1, 0, 'apple', 'kiwi', 1.2, 3, 4, 12], $ret->toArray());
+        }
         $this->assertInstanceOf(Vector::class, $ret);
 
         $vec = new Vector([12, 3, -1, 0, 4, 1.2, 'kiwi', 'apple']);

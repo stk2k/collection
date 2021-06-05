@@ -47,8 +47,14 @@ class QueueTest extends TestCase
 
         $queue = new Queue([12, 3, -1, 0, 4, 1.2, 'kiwi', 'apple']);
         $ret = $queue->sort();
-        $this->assertSame([-1, 0, 'apple', 'kiwi', 1.2, 3, 4, 12], $queue->toArray());
-        $this->assertSame([-1, 0, 'apple', 'kiwi', 1.2, 3, 4, 12], $ret->toArray());
+        if (version_compare(PHP_VERSION, '8.0.0') >= 0) {
+            $this->assertSame([-1, 0, 1.2, 3, 4, 12, 'apple', 'kiwi'], $queue->toArray());
+            $this->assertSame([-1, 0, 1.2, 3, 4, 12, 'apple', 'kiwi'], $ret->toArray());
+        }
+        else{
+            $this->assertSame([-1, 0, 'apple', 'kiwi', 1.2, 3, 4, 12], $queue->toArray());
+            $this->assertSame([-1, 0, 'apple', 'kiwi', 1.2, 3, 4, 12], $ret->toArray());
+        }
         $this->assertInstanceOf(Queue::class, $ret);
 
         $queue = new Queue([12, 3, -1, 0, 4, 1.2, 'kiwi', 'apple']);

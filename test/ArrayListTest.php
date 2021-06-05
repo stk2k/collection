@@ -218,9 +218,14 @@ class ArrayListTest extends TestCase
 
         $list = new ArrayList([12, 3, -1, 0, 4, 1.2, 'kiwi', 'apple']);
         $ret = $list->sort();
-        print_r($list->toArray());
-        $this->assertSame([-1, 0, 'apple', 'kiwi', 1.2, 3, 4, 12], $list->toArray());
-        $this->assertSame([-1, 0, 'apple', 'kiwi', 1.2, 3, 4, 12], $ret->toArray());
+        if (version_compare(PHP_VERSION, '8.0.0') >= 0) {
+            $this->assertSame([-1, 0, 1.2, 3, 4, 12, 'apple', 'kiwi'], $list->toArray());
+            $this->assertSame([-1, 0, 1.2, 3, 4, 12, 'apple', 'kiwi'], $ret->toArray());
+        }
+        else{
+            $this->assertSame([-1, 0, 'apple', 'kiwi', 1.2, 3, 4, 12], $list->toArray());
+            $this->assertSame([-1, 0, 'apple', 'kiwi', 1.2, 3, 4, 12], $ret->toArray());
+        }
         $this->assertInstanceOf(ArrayList::class, $ret);
 
         $list = new ArrayList([12, 3, -1, 0, 4, 1.2, 'kiwi', 'apple']);
