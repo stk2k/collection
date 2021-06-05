@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__. '/include/autoload.php';
+require_once dirname(__DIR__). '/vendor/autoload.php';
 
-use Stk2k\Collection\Set;
+use stk2k\collection\Set;
 
 $data = ['red', 'green', 'blue'];
 

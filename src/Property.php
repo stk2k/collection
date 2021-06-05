@@ -1,5 +1,7 @@
 <?php
-namespace Stk2k\Collection;
+declare(strict_types=1);
+
+namespace stk2k\collection;
 
 class Property extends Collection
 {

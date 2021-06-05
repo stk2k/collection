@@ -1,10 +1,12 @@
 <?php
-namespace Stk2k\Collection;
+declare(strict_types=1);
+
+namespace stk2k\collection;
 
 use ArrayAccess;
 use IteratorAggregate;
 
-use Stk2k\Collection\Util\PhpArrayTrait;
+use stk2k\collection\Util\PhpArrayTrait;
 
 class HashMap extends Collection implements ArrayAccess, IteratorAggregate
 {

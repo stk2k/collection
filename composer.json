@@ -12,16 +12,21 @@
     }
   ],
   "require": {
-    "php": ">=7.1",
+    "php": ">=7.2",
     "ext-json": "*"
   },
   "require-dev": {
-    "phpunit/phpunit": "^6.3.0",
+    "phpunit/phpunit": "^8.5.15",
     "php-coveralls/php-coveralls": "^2.0"
   },
   "autoload": {
     "psr-4": {
-      "Stk2k\\Collection\\": "src/"
+      "stk2k\\collection\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "stk2k\\collection\\test\\": "test/"
     }
   }
 }

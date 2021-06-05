@@ -1,6 +1,12 @@
 <?php
+declare(strict_types=1);
+
+namespace stk2k\collection\test;
+
+use Iterator;
+
 use PHPUnit\Framework\TestCase;
-use Stk2k\Collection\Collection;
+use stk2k\collection\Collection;
 
 class CollectionTest extends TestCase
 {
@@ -162,7 +168,7 @@ class CollectionTest extends TestCase
     public function testToString()
     {
         $collection = new Collection(['apple', 'banana', 'kiwi']);
-        $this->assertSame('Stk2k\Collection\Collection values:["apple","banana","kiwi"]', $collection->__toString());
+        $this->assertSame('stk2k\Collection\Collection values:["apple","banana","kiwi"]', $collection->__toString());
         $this->assertSame(['apple', 'banana', 'kiwi'], $collection->toArray());     // immutable
     }
     

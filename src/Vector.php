@@ -1,9 +1,11 @@
 <?php
-namespace Stk2k\Collection;
+declare(strict_types=1);
+
+namespace stk2k\collection;
 
 use ArrayAccess;
 
-use Stk2k\Collection\Util\PhpArrayTrait;
+use stk2k\collection\Util\PhpArrayTrait;
 
 class Vector extends Collection implements ArrayAccess
 {

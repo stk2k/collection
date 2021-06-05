@@ -1,12 +1,14 @@
 <?php
-namespace Stk2k\Collection;
+declare(strict_types=1);
+
+namespace stk2k\collection;
 
 use Countable;
 use IteratorAggregate;
 use Serializable;
 use ArrayIterator;
 
-use Stk2k\Collection\Util\PhpArrayTrait;
+use stk2k\collection\Util\PhpArrayTrait;
 
 class Collection implements Countable, IteratorAggregate, Serializable
 {

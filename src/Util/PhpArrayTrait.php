@@ -1,5 +1,7 @@
 <?php
-namespace Stk2k\Collection\Util;
+declare(strict_types=1);
+
+namespace stk2k\collection\Util;
 
 trait PhpArrayTrait
 {
@@ -393,7 +395,7 @@ trait PhpArrayTrait
      * Sort array data by element's field
      *
      * @param string $field
-     * @param callable $callback
+     * @param callable|null $callback
      *
      * @return array
      */
@@ -405,7 +407,7 @@ trait PhpArrayTrait
         }
         usort($values, function($a, $b) use($callback, $field){
             if (is_array($a) && is_array($b) && isset($a[$field]) && isset($b[$field])){
-                return $callback($a[$field], $b[$field]);
+                return $callback((string)$a[$field], (string)$b[$field]);
             }
             if (is_object($a) && is_object($b) && property_exists($a, $field) && property_exists($b, $field)){
                 return $callback($a->$field, $b->$field);

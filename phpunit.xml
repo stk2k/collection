@@ -15,7 +15,7 @@
          stopOnIncomplete="false"
          stopOnSkipped="false"
          stopOnRisky="false"
-         bootstrap="test/bootstrap.php"
+         bootstrap="vendor/autoload.php"
 >
     <testsuites>
         <testsuite name="Calgamo/Collection Tests">
@@ -27,7 +27,7 @@
         <whitelist>
             <directory suffix=".php">./src</directory>
             <exclude>
-                <directory>./sample</directory>
+                <directory>./test</directory>
                 <directory>./vendor</directory>
                 <directory suffix="Interface.php">./src</directory>
                 <directory suffix="Exception.php">./src</directory>

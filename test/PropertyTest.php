@@ -1,7 +1,13 @@
 <?php
+declare(strict_types=1);
+
+namespace stk2k\collection\test;
+
+use ReflectionMethod;
+
 use PHPUnit\Framework\TestCase;
 
-use Stk2k\Collection\Property;
+use stk2k\collection\Property;
 
 class PropertyTest extends TestCase
 {

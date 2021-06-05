@@ -1,6 +1,10 @@
 <?php
+declare(strict_types=1);
+
+namespace stk2k\collection\test;
+
 use PHPUnit\Framework\TestCase;
-use Stk2k\Collection\Set;
+use stk2k\collection\Set;
 
 class SetTest extends TestCase
 {

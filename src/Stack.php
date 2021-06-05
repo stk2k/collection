@@ -1,7 +1,9 @@
 <?php
-namespace Stk2k\Collection;
+declare(strict_types=1);
 
-use Stk2k\Collection\Util\PhpArrayTrait;
+namespace stk2k\collection;
+
+use stk2k\collection\Util\PhpArrayTrait;
 
 class Stack extends Collection
 {

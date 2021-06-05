@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__. '/include/autoload.php';
+require_once dirname(__DIR__). '/vendor/autoload.php';
 
-use Stk2k\Collection\HashMap;
+use stk2k\collection\HashMap;
 
 $data = ['name' => 'David', 'age' => 21, 'height' => 172.2];
 
