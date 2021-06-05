@@ -168,7 +168,7 @@ class CollectionTest extends TestCase
     public function testToString()
     {
         $collection = new Collection(['apple', 'banana', 'kiwi']);
-        $this->assertSame('stk2k\Collection\Collection values:["apple","banana","kiwi"]', $collection->__toString());
+        $this->assertSame('stk2k\collection\Collection values:["apple","banana","kiwi"]', $collection->__toString());
         $this->assertSame(['apple', 'banana', 'kiwi'], $collection->toArray());     // immutable
     }
     
